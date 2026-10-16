@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="container header-layout">
+    <%- include('brand') %>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="lp-link lp-link--standalone" href="/#platform">Platform</a>
+      <a class="lp-link lp-link--standalone" href="/#solutions">Solutions</a>
+      <a class="lp-link lp-link--standalone" href="/#why-lepidus">Why Lepidus</a>
+    </nav>
+    <div class="header-actions">
+      <button class="lp-button lp-button--secondary lp-button--sm" type="button" data-theme-cycle aria-label="Color theme: light. Switch to dark"><%- include('icon', { name: 'sun' }) %><span class="theme-label">Light</span></button>
+      <% if (user) { %><a class="lp-link lp-link--standalone" href="/workspace">Your workspace <%- include('icon', { name: 'arrow' }) %></a>
+      <% } else { %><a class="lp-link lp-link--standalone" href="/login">Log in <%- include('icon', { name: 'arrow' }) %></a><% } %>
+    </div>
+  </div>
+</header>

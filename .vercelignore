@@ -1,0 +1,7 @@
+.env
+.env.*
+.sessions
+.git
+test
+test-results
+playwright-report

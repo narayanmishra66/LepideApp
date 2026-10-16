@@ -1,0 +1,9 @@
+<div class="lp-input lp-input--full-width">
+  <div class="lp-input__row lp-input__row--label-top">
+    <label class="lp-input__label" for="<%= id %>"><%= label %></label>
+    <div class="lp-input__field<%= errors[id] ? ' lp-input__field--error' : '' %>">
+      <input class="lp-input__input" id="<%= id %>" name="<%= id %>" type="<%= type %>" placeholder="<%= placeholder %>" autocomplete="<%= autocomplete %>" value="<%= type === 'password' ? '' : (values[id] || '') %>" required maxlength="<%= id === 'password' ? 128 : id === 'email' ? 254 : id === 'name' ? 80 : 100 %>" <% if (id === 'password' && (page === 'signup' || page === 'reset-password')) { %>minlength="12"<% } %> aria-invalid="<%= errors[id] ? 'true' : 'false' %>" aria-describedby="<%= id %>-message">
+    </div>
+  </div>
+  <div class="lp-input__message<%= errors[id] ? ' lp-input__message--error' : '' %>" id="<%= id %>-message" <% if (!errors[id] && id !== 'password') { %>hidden<% } %>><%= errors[id] || (id === 'password' && (page === 'signup' || page === 'reset-password') ? 'Use at least 12 characters. A passphrase works great.' : '') %></div>
+</div>
